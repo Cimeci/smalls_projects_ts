@@ -1,8 +1,8 @@
 # smalls_projects_ts
 Several small projects in TypeScript to learn the language
 
-# ToDO List
+## Projects
 
-# Counter
-
-# Contact Managers
+- ToDO List
+- Counter
+- Contact Managers
