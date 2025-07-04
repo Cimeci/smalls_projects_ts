@@ -1,6 +1,13 @@
 "use strict";
 let contacts = [];
 let currentEditId = null;
+function copyText(text, element) {
+    navigator.clipboard.writeText(text);
+    element.innerText = 'Copied !';
+    setTimeout(() => {
+        element.innerText = text;
+    }, 1000);
+}
 function saveContacts() {
     localStorage.setItem("contacts", JSON.stringify(contacts));
 }
@@ -14,10 +21,35 @@ function loadContacts() {
 function displayContact(contact) {
     const li = document.createElement("li");
     li.classList.add("contact-item");
-    const infoSpan = document.createElement("span");
-    infoSpan.textContent = `${contact.name} | ${contact.email}${contact.phone ? " | " + contact.phone : ""}`;
+    const span_info = document.createElement("div");
+    span_info.classList.add('span-info');
+    const span_name = document.createElement("span_name");
+    span_name.textContent = `${contact.name}`;
+    span_name.classList.add('span-name');
+    span_name.addEventListener("click", () => {
+        copyText(contact.name, span_name);
+    });
+    const span_email = document.createElement("span_email");
+    span_email.textContent = `${contact.email}`;
+    span_email.classList.add('span-email');
+    span_email.addEventListener("click", () => {
+        copyText(contact.email, span_email);
+    });
+    const span_phone = document.createElement("span_phone");
+    span_phone.textContent = `${contact.phone ? contact.phone : ""}`;
+    span_phone.classList.add('span-phone');
+    span_phone.addEventListener("click", () => {
+        copyText(contact.phone ? contact.phone : '', span_phone);
+    });
+    span_info.appendChild(span_name);
+    span_info.appendChild(span_email);
+    if (contact.phone)
+        span_info.appendChild(span_phone);
+    const btn_div = document.createElement("div");
+    btn_div.classList.add('btn-div');
     const btn_edit = document.createElement("button");
     btn_edit.textContent = "Edit";
+    btn_edit.classList.add('edit-btn');
     btn_edit.addEventListener("click", () => {
         currentEditId = contact.id;
         name_input.value = contact.name;
@@ -28,15 +60,17 @@ function displayContact(contact) {
     console.log("Création bouton Delete pour contact id:", contact.id);
     const btn_delete = document.createElement("button");
     btn_delete.textContent = "Delete";
+    btn_delete.classList.add('delete-btn');
     btn_delete.addEventListener("click", () => {
         contacts = contacts.filter(c => c.id !== contact.id);
         saveContacts();
         displayAllContacts(contacts);
         resetForm();
     });
-    li.appendChild(infoSpan);
-    li.appendChild(btn_edit);
-    li.appendChild(btn_delete);
+    btn_div.appendChild(btn_edit);
+    btn_div.appendChild(btn_delete);
+    li.appendChild(span_info);
+    li.appendChild(btn_div);
     contact_list.appendChild(li);
 }
 function displayAllContacts(contactArray) {

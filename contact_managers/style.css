@@ -68,7 +68,7 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-@keyframes caca {
+@keyframes bomrang {
   0% {
     scale: 0.6;
     filter: blur(3px);
@@ -80,13 +80,19 @@ body {
   }
 }
 
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
 .contact-item {
   display: flex;
+  width: 100%;
   align-items: center;
   padding: 8px 0;
-  animation: caca 0.3s cubic-bezier(0,1,.6,1.1);
+  animation: bomrang 0.3s cubic-bezier(0,1,.6,1.1);
   border-bottom: 1px solid #eee;
-  overflow: scroll;
+  /* overflow: scroll; */
   width: 100%;
   gap: 10px;
   white-space: nowrap;
@@ -102,18 +108,18 @@ body {
 }
 
 .span-info{
-  width: 50%;
-  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
   display: flex;
   white-space: nowrap;
 }
 
 .btn-div{
-  width: 50%;
+  gap: 10px;
+  display: flex;
 }
 
 .edit-btn{
-  margin-left: auto !important;
   background-color: #1976d220;
   color: #1976d2 !important;
   transition: 0.1s;
