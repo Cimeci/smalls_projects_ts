@@ -1,0 +1,18 @@
+body {
+	font-family: sans-serif;
+	max-width: 600px;
+	margin: auto;
+	padding: 2em;
+}
+li {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5em;
+}
+button {
+	margin-left: 0.5em;
+}
+.done {
+	text-decoration: line-through;
+	color: rgb(255, 0, 0);
+}
