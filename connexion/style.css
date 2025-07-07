@@ -1,0 +1,148 @@
+body{
+    background-color: aliceblue;
+    width: 100%;
+}
+
+.top-bar {
+    float: right;
+    margin-right: 5px;
+}
+
+.top-bar button{
+    display:inline-block;
+    background-color: rgb(17, 120, 180);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 16px;
+    font-size: 20px;
+    transition: 0.3s;
+    margin-right: 5px;
+}
+
+.top-bar button:hover{
+    background-color: rgb(6, 65, 99);
+}
+
+.login-modal, .register-modal {
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  border-radius: 15px;
+  /* padding: 10%; */
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-close-login, .btn-close-register {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 0;
+    border-radius: 6px;
+    border: none;
+    width: 32px;
+    height: 32px;
+    background-image: url('https://img.icons8.com/?size=100&id=3062&format=png&color=000000');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    background-color: transparent;
+    transition: transform 0.2s;
+}
+
+.btn-close-login:hover, .btn-close-register:hover{
+  transform: scale(1.1);
+}
+
+.login-modal input, .register-modal input {
+    width: 80%;
+    height: 50px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.login-modal input:focus, .register-modal input:focus {
+    outline: none;
+    border-color: rgb(17, 120, 180);
+    box-shadow: 0 0 0 2px rgba(17, 120, 180, 0.2);
+}
+
+/* .login-modal input:first-child, .register-modal input:first-child {
+    margin-bottom: 5%;
+} */
+
+.hidden {
+  display: none;
+}
+
+.btn-send-login, .btn-send-register{
+    margin-top: 20px;
+    font-family: inherit;
+    font-size: 18px;
+    background: linear-gradient(to bottom, #4dc7d9 0%,#66a6ff 100%);
+    color: white;
+    padding: 0.8em 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+.btn-send-login:hover, .btn-send-register:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-send-login:active, .btn-send-register:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-send-login span, .btn-send-register span {
+    display: block;
+    margin-left: 0.4em;
+    transition: all 0.3s;
+}
+
+.btn-send-login svg, .btn-send-register svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+    transition: all 0.3s;
+}
+
+.btn-send-login .svg-wrapper, .btn-send-register .svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 0.5em;
+    transition: all 0.3s;
+}
+
+.btn-send-login:hover .svg-wrapper, .btn-send-register:hover .svg-wrapper {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-send-login:hover svg, .btn-send-register:hover svg {
+    transform: rotate(45deg);
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Connexion Website</title>
+</head>
+<body>
+	<div class="top-bar">
+		<button id="btn-login">Login</button>
+		<button id="btn-register">Register</button>
+	</div>
+	<div id="login-modal" class="login-modal hidden">
+		<!-- <form id="login-form"> -->
+			<input type="text" placeholder="Login" id="input-login-login">
+			<input type="password" placeholder="Password" id="input-login-password">
+			<button id="btn-close-login" class="btn-close-login" href="https://img.icons8.com/?size=100&id=3062&format=png&color=000000"></button>
+			<button id="btn-send-login" class="btn-send-login">
+  				<div class="svg-wrapper-1">
+   					<div class="svg-wrapper">
+      					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        					<path fill="none" d="M0 0h24v24H0z"></path>
+        					<path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+      					</svg>
+    				</div>
+  				</div>
+  				<span>Send</span>
+			</button>
+		<!-- </form> -->
+	</div>
+
+	<div id="register-modal" class="register-modal hidden">
+		<!-- <form id="register-form"> -->
+			<input type="text" placeholder="Register" id="input-register-login">
+			<input type="password" placeholder="Password" id="input-register-password">
+			<input type="password" placeholder="Confirm Password" id="input-register-confirm-password">
+			<button id="btn-close-register" class="btn-close-register" href="https://img.icons8.com/?size=100&id=3062&format=png&color=000000"></button>
+			<button id="btn-send-register" class="btn-send-register">
+  				<div class="svg-wrapper-1">
+   					<div class="svg-wrapper">
+      					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        					<path fill="none" d="M0 0h24v24H0z"></path>
+        					<path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+      					</svg>
+    				</div>
+  				</div>
+  				<span>Send</span>
+			</button>
+		<!-- </form> -->
+	</div>
+
+	<script src="dist/script.js" defer></script>
+</body>
+</html>
