@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/auth.css">
 	<title>Connexion Website</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
 		<button id="btn-register">Register</button>
 	</div>
 	<div id="login-modal" class="login-modal hidden">
-		<!-- <form id="login-form"> -->
+		<form id="login-form" class="login-modal-form">
 			<input type="text" placeholder="Login" id="input-login-login">
 			<input type="password" placeholder="Password" id="input-login-password">
 			<button id="btn-close-login" class="btn-close-login" href="https://img.icons8.com/?size=100&id=3062&format=png&color=000000"></button>
@@ -27,11 +27,11 @@
   				</div>
   				<span>Send</span>
 			</button>
-		<!-- </form> -->
+		</form>
 	</div>
 
 	<div id="register-modal" class="register-modal hidden">
-		<!-- <form id="register-form"> -->
+		<form id="register-form" class="register-modal-form">
 			<input type="text" placeholder="Register" id="input-register-login">
 			<input type="password" placeholder="Password" id="input-register-password">
 			<input type="password" placeholder="Confirm Password" id="input-register-confirm-password">
@@ -47,9 +47,9 @@
   				</div>
   				<span>Send</span>
 			</button>
-		<!-- </form> -->
+		</form>
 	</div>
 
-	<script src="dist/script.js" defer></script>
+	<script src="dist/ts/auth.js" defer></script>
 </body>
 </html>

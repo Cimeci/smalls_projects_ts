@@ -31,9 +31,6 @@ function loginUser(login, password) {
         return false;
     }
     localStorage.setItem('currentUser', JSON.stringify(user));
-    if (login_modal)
-        login_modal.classList.add('hidden');
-    alert("Success");
     return true;
 }
 const btn_send_login = document.getElementById('btn-send-login');
@@ -41,7 +38,9 @@ btn_send_login === null || btn_send_login === void 0 ? void 0 : btn_send_login.a
     const input_login_login = document.getElementById('input-login-login').value;
     const input_login_password = document.getElementById('input-login-password').value;
     if (loginUser(input_login_login, input_login_password)) {
-        console.log("connexion");
+        // alert("Success log");
+        window.location.href = '/home.html';
+        console.log('Trying to redirect to:', window.location.href);
     }
 });
 btn_register === null || btn_register === void 0 ? void 0 : btn_register.addEventListener('click', () => {
@@ -66,15 +65,26 @@ function registerUser(login, password) {
     const newUser = { login, password };
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
-    if (register_modal)
-        register_modal.classList.add('hidden');
     return true;
 }
 const btn_send_register = document.getElementById('btn-send-register');
 btn_send_register === null || btn_send_register === void 0 ? void 0 : btn_send_register.addEventListener('click', () => {
     const input_register_login = document.getElementById('input-register-login').value;
     const input_register_password = document.getElementById('input-register-password').value;
+    const input_register_confirm = document.getElementById('input-register-confirm-password').value;
+    if (input_register_password !== input_register_confirm) {
+        alert('Not the same password');
+        document.getElementById('input-register-password').value = '';
+        document.getElementById('input-register-confirm-password').value = '';
+        return;
+    }
     if (registerUser(input_register_login, input_register_password)) {
-        alert('Inscription réussie! Vous pouvez maintenant vous connecter.');
+        alert('Succes register');
+        clearInputs('register-form');
+    }
+    else {
+        document.getElementById('input-register-login').focus();
+        document.getElementById('input-register-password').value = '';
+        document.getElementById('input-register-confirm-password').value = '';
     }
 });
