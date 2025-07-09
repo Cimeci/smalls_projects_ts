@@ -1,41 +1,106 @@
 body {
     margin: 0;
-    width: 100%;
+    width: 90%;
     background-color: aliceblue;
 }
 
 header {
-    margin-left: 10px;
+    /* margin: 10px; */
     display: flex;
+    align-items: center;
+    width: 90%;
     justify-content: space-between;
 }
 
+h1 {
+    margin: 10px;
+}
+
+p {
+   margin: 10px; 
+}
+
+button:hover {
+    transition: transform 0.3s ease;
+    transform: translateY(-5px);
+}
+
+.navbar-wrapper {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    /* display: flex; */
+}
+
+.txt-navbar {
+    margin-top: 35px;
+    text-align: center;
+    color: aliceblue;
+    font-size: 30px;
+}
+
 .btn-navbar {
-    margin-right: 20px;
-    margin-top: 20px;
+    position: fixed;
+    right: 25px;
+    top: 25px;
+    z-index: 1001;
+    /* align-self: flex-start; */
     border-radius: 6px;
     border: none;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     background-image: url('https://img.icons8.com/?size=100&id=17144&format=png&color=000000');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
     background-color: transparent;
-    transition: transform 0.2s;
+    transition: transform 0.3s ease;
+}
+
+.btn-navbar:hover {
+    transform: translateX(-8px);
+}
+
+.navbar {
+    width: 200px;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    background-color: rgb(99, 88, 88);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 0px 15px 0px 15px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    justify-content: space-between;
+}
+
+.navbar.visible {
+    transform: translateX(0);
+}
+
+.navbar.visible ~ .btn-navbar {
+    transform: translateX(-225px);
+}
+.navbar button {
+    font-style: Arial;
+    font-size: 23px;
+    background-color: blueviolet;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    width: 100%;
+    height: 7%;
+}
+
+.btn-logout-navbar {
+    margin-top: auto;
+    margin-bottom: 20px;
 }
 
 .hidden {
     display: none;
-}
-
-header button:hover{
-  transform: scale(1.1);
-}
-
-.separate-line{
-    background-color: black;
-    width: 100%;
-    height: 10px;
 }

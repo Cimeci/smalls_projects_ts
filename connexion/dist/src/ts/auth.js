@@ -43,7 +43,7 @@ loginForm === null || loginForm === void 0 ? void 0 : loginForm.addEventListener
     const input_login_login = document.getElementById('input-login-login').value;
     const input_login_password = document.getElementById('input-login-password').value;
     if (loginUser(input_login_login, input_login_password)) {
-        alert("Succes login");
+        // alert("Succes login");
         window.location.href = 'home.html';
     }
 });

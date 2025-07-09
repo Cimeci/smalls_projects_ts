@@ -57,7 +57,7 @@ loginForm?.addEventListener('submit', (e) => {
     const input_login_password = (document.getElementById('input-login-password') as HTMLInputElement).value;
 
     if (loginUser(input_login_login, input_login_password)) {
-        alert("Succes login");
+        // alert("Succes login");
         window.location.href = 'home.html';
     }
 });

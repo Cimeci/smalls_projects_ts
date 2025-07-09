@@ -8,8 +8,19 @@ const btn_settings_navbar = document.getElementById('btn-settings-navbar') as HT
 const btn_credits_navbar = document.getElementById('btn-credits-navbar') as HTMLButtonElement
 const btn_logout_navbar = document.getElementById('btn-logout-navbar') as HTMLButtonElement
 
+// btn_navbar?.addEventListener('click', () => {
+//     if (navbar && navbar.classList.contains('hidden')){
+//         navbar.classList.remove('hidden');
+//     }
+//     else if (navbar) {
+//         navbar.classList.add('hidden');
+//     }
+// });
+
+btn_logout_navbar?.addEventListener('click', () => {
+    window.location.href = 'index.html';
+});
+
 btn_navbar?.addEventListener('click', () => {
-    if (navbar){
-        navbar.classList.remove('hidden')
-    }
-})
+    navbar?.classList.toggle('visible');
+});
