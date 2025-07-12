@@ -20,7 +20,8 @@ btn_login?.addEventListener('click', () => {
 });
 
 const btn_close_login = document.getElementById('btn-close-login') as HTMLButtonElement;
-btn_close_login?.addEventListener('click', () => {
+btn_close_login?.addEventListener('click', (e) => {
+    e.preventDefault();
     if (login_modal) {
         login_modal.classList.add('hidden');
     }
@@ -69,7 +70,8 @@ btn_register?.addEventListener('click', () => {
 });
 
 const btn_close_register = document.getElementById('btn-close-register') as HTMLButtonElement;
-btn_close_register?.addEventListener('click', () => {
+btn_close_register?.addEventListener('click', (e) => {
+    e.preventDefault();
     if (register_modal) {
         register_modal.classList.add('hidden');
     }
@@ -109,8 +111,8 @@ registerForm?.addEventListener('submit', (e) => {
     const input_register_confirm_password = (document.getElementById('input-register-confirm-password') as HTMLInputElement).value;
 
     if (registerUser(input_register_login, input_register_password, input_register_confirm_password)) {
-        alert('Succes register');
         clearInputs('register-form');
         register_modal?.classList.add('hidden');
+        window.location.href = 'home.html';
     }
 });

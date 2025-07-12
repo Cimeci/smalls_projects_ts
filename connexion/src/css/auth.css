@@ -1,11 +1,13 @@
 body{
     background-color: aliceblue;
     width: 100%;
+    background-image: url('https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-0214-620a-ae9d-a06a08f823cf/raw?se=2025-07-10T09%3A51%3A44Z&sp=r&sv=2024-08-04&sr=b&scid=42800f39-755e-5a82-aa7f-0e2f8409bc52&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-10T06%3A38%3A04Z&ske=2025-07-11T06%3A38%3A04Z&sks=b&skv=2024-08-04&sig=98aydYtSo1HIO3BnFdMW7V4yByWZV/4iGFXoca2P1DY%3D');
+    background-size: 100%;
 }
 
 .top-bar {
     float: right;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .top-bar button{

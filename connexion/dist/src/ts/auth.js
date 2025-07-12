@@ -13,7 +13,8 @@ btn_login === null || btn_login === void 0 ? void 0 : btn_login.addEventListener
     }
 });
 const btn_close_login = document.getElementById('btn-close-login');
-btn_close_login === null || btn_close_login === void 0 ? void 0 : btn_close_login.addEventListener('click', () => {
+btn_close_login === null || btn_close_login === void 0 ? void 0 : btn_close_login.addEventListener('click', (e) => {
+    e.preventDefault();
     if (login_modal) {
         login_modal.classList.add('hidden');
     }
@@ -53,7 +54,8 @@ btn_register === null || btn_register === void 0 ? void 0 : btn_register.addEven
     }
 });
 const btn_close_register = document.getElementById('btn-close-register');
-btn_close_register === null || btn_close_register === void 0 ? void 0 : btn_close_register.addEventListener('click', () => {
+btn_close_register === null || btn_close_register === void 0 ? void 0 : btn_close_register.addEventListener('click', (e) => {
+    e.preventDefault();
     if (register_modal) {
         register_modal.classList.add('hidden');
     }
@@ -85,8 +87,8 @@ registerForm === null || registerForm === void 0 ? void 0 : registerForm.addEven
     const input_register_password = document.getElementById('input-register-password').value;
     const input_register_confirm_password = document.getElementById('input-register-confirm-password').value;
     if (registerUser(input_register_login, input_register_password, input_register_confirm_password)) {
-        alert('Succes register');
         clearInputs('register-form');
         register_modal === null || register_modal === void 0 ? void 0 : register_modal.classList.add('hidden');
+        window.location.href = 'home.html';
     }
 });
