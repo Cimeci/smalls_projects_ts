@@ -1,4 +1,3 @@
-"use strict";
 function clearInputs(formId) {
     const form = document.getElementById(formId);
     form === null || form === void 0 ? void 0 : form.reset();
@@ -92,3 +91,4 @@ registerForm === null || registerForm === void 0 ? void 0 : registerForm.addEven
         window.location.href = 'home.html';
     }
 });
+export {};

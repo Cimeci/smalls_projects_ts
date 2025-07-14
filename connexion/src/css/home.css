@@ -1,117 +1,213 @@
 body {
-    /* color: whitesmoke; */
-    width: 90%;
-    margin: 10px 10px 10px 10px;
-    background-color: aliceblue;
-    /* background-image: url('https://i.redd.it/anyone-interested-in-making-the-animation-for-the-matrix-v0-4904jjjxjlja1.png?width=4300&format=png&auto=webp&s=c91827571a4af6cd91be8d13b108800209b97e32'); */
-    /* background-size: 100%; */
+	/* color: whitesmoke; */
+	width: 90%;
+	margin: 10px 10px 10px 10px;
+	background-color: aliceblue;
+	/* background-image: url('https://i.redd.it/anyone-interested-in-making-the-animation-for-the-matrix-v0-4904jjjxjlja1.png?width=4300&format=png&auto=webp&s=c91827571a4af6cd91be8d13b108800209b97e32'); */
+	/* background-size: 100%; */
+	background-attachment: fixed;
 }
 
-h1 {
-    /* display: flex; */
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
+.welcome {
+	/* display: flex; */
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+button {
+	border-radius: 8px;
+	border: none;
 }
 
 button:hover {
-    transition: transform 0.3s ease;
-    transform: translateY(-5px);
-    
+	transition: transform 0.3s ease;
+	transform: translateY(-5px);
+	
 }
 
 .navbar-wrapper {
-    position: fixed;
-    right: 0;
-    top: 0;
-    height: 100%;
-    z-index: 1000;
-    /* display: flex; */
+	position: fixed;
+	right: 0;
+	top: 0;
+	height: 100%;
+	z-index: 1000;
+	/* display: flex; */
 }
 
 .txt-navbar {
-    margin-top: 35px;
-    text-align: center;
-    color: aliceblue;
-    font-size: 30px;
+	margin-top: 35px;
+	text-align: center;
+	color: aliceblue;
+	font-size: 30px;
 }
 
 .btn-navbar {
-    background-color: aliceblue;
-    position: fixed;
-    right: 25px;
-    top: 25px;
-    z-index: 1001;
-    /* align-self: flex-start; */
-    border-radius: 6px;
-    border: none;
-    width: 40px;
-    height: 40px;
-    background-image: url('https://img.icons8.com/?size=100&id=102344&format=png&color=000000');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    background-color: transparent;
-    transition: transform 0.3s ease;
+	background-color: aliceblue;
+	position: fixed;
+	right: 25px;
+	top: 25px;
+	z-index: 1001;
+	/* align-self: flex-start; */
+	border-radius: 6px;
+	border: none;
+	width: 40px;
+	height: 40px;
+	background-image: url('https://img.icons8.com/?size=100&id=102344&format=png&color=000000');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+	background-color: transparent;
+	transition: transform 0.3s ease;
 }
 
 .btn-navbar:hover {
-    transform: translateX(-8px);
+	transform: translateX(-8px);
 }
 
 .navbar {
-    width: 200px;
-    height: 100%;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    background-color: rgb(99, 88, 88);
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding: 0px 15px 0px 15px;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    position: relative;
-    justify-content: space-between;
+	width: 200px;
+	height: 100%;
+	transform: translateX(100%);
+	transition: transform 0.3s ease;
+	background-color: rgb(99, 88, 88);
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	padding: 0px 15px 0px 15px;
+	box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+	position: relative;
+	justify-content: space-between;
 }
 
 .navbar.visible {
-    transform: translateX(0);
+	transform: translateX(0);
 }
 
 .navbar.visible ~ .btn-navbar {
-    transform: translateX(-225px);
-    /* transform: translateX(-250px); */
+	transform: translateX(-225px);
+	/* transform: translateX(-250px); */
 }
 .navbar button {
-    font-style: Arial;
-    font-size: 23px;
-    background-color: rgb(32, 160, 6);
-    border: none;
-    border-radius: 6px;
-    color: white;
-    width: 100%;
-    height: 7%;
+	font-style: Arial;
+	font-size: 23px;
+	background-color: rgb(32, 160, 6);
+	border: none;
+	border-radius: 6px;
+	color: white;
+	width: 100%;
+	height: 7%;
 }
 
 .btn-logout-navbar {
-    margin-top: auto;
-    margin-bottom: 20px;
+	margin-top: auto;
+	margin-bottom: 20px;
 }
 
 .div-shop {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height:100%h;
-    background-color: rgb(13, 194, 118);
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-    border-radius: 15px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	/* background-color: rgb(13, 194, 118); */
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+	border-radius: 0;
+	overflow: hidden;
 }
 
 .div-shop.visible {
-    display: block;
+	display: flex;
+}
+
+.container-shop {
+	padding-top: 60px;
+	position: relative;
+	width: 90%;
+	height: 90%;
+	overflow-y: auto;
+	display: grid;
+	justify-content: center;
+	grid-template-columns: repeat(3, 25%);
+	gap: 60px;
+	padding: 20px;
+	background-color: rgb(71, 80, 75);
+	border-radius: 10px;
+}
+
+.wallet-display {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 10;
+}
+
+.wallet-display h1 {
+    color: #333;
+    font-size: 24px;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.box {
+  	width: 100%;
+ 	height: 500px;
+  	background-color: rgb(13, 194, 118);
+	border-radius: 12px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	gap: 15px;
+}
+
+.line {
+	border: 4px solid rgb(0,0,0);
+}
+
+.box h1 {
+	color: rgb(33, 32, 32);
+	font-weight: 600;
+	font-size: 35px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	margin: 0;
+
+}
+
+.box img {
+	/* margin-top: 4%; */
+	max-width: 60%;
+	max-height: 60%;
+	min-width: 100px;
+	min-height: 100px;
+	object-fit: contain;
+	padding: 10px;
+	border: 4px solid #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	margin: 0;
+}
+
+.box button {
+	background-color: rgb(32, 32, 32);
+	color: rgb(13, 194, 118);
+	min-width: 100px;
+	min-height: 50px;
+	width: 90%;
+	height: 10%;
+	font-size: 30px;
+	font-weight: 1000;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	letter-spacing: 6px;
+	margin: 0;
 }

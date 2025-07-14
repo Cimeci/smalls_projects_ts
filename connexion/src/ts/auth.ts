@@ -1,7 +1,4 @@
-interface User {
-    login: string;
-    password: string;
-}
+import { User } from './types';
 
 function clearInputs(formId: string): void {
     const form = document.getElementById(formId) as HTMLFormElement;

@@ -1,4 +1,3 @@
-"use strict";
 const navbar = document.getElementById('navbar'); // nav element
 const btn_navbar = document.getElementById('btn-navbar');
 const btn_game_navbar = document.getElementById('btn-game-navbar');
@@ -30,3 +29,4 @@ btn_logout_navbar === null || btn_logout_navbar === void 0 ? void 0 : btn_logout
 btn_navbar === null || btn_navbar === void 0 ? void 0 : btn_navbar.addEventListener('click', () => {
     navbar === null || navbar === void 0 ? void 0 : navbar.classList.toggle('visible');
 });
+export {};
