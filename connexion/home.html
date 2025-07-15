@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="src/css/home.css">
+    <link rel="stylesheet" href="src/css/shop.css">
+    <link rel="stylesheet" href="src/css/inventory.css">
 </head>
 <body>
     <h1 class="welcome">Welcome to our Transcendence <span id="username"></span></h1>
@@ -12,10 +14,10 @@
         <nav id="navbar" class="navbar">
             <h2 class="txt-navbar">Nav bar</h2>
             <button id="btn-game-navbar" class="btn-game-navbar">Game</button>
-            <button id="btn-shop-navbar" class="btn-shop-navbar">Shop</button>
             <button id="btn-friends-navbar" class="btn-friends-navbar">Friends</button>
+            <button id="btn-shop-navbar" class="btn-shop-navbar">Shop</button>
+            <button id="btn-inventory-navbar" class="btn-inventory-navbar">Inventory</button>
             <button id="btn-settings-navbar" class="btn-settings-navbar">Settings</button>
-            <button id="btn-credits-navbar" class="btn-credits-navbar">Credits</button>
             <button id="btn-logout-navbar" class="btn-logout-navbar">Logout</button>
         </nav>
         <button id="btn-navbar" class="btn-navbar"></button>
@@ -72,9 +74,38 @@
             </div>
         </div>
     </div>
+    <div id="div-inventory" class="div-inventory hidden">
+        <div class="container-inventory">
+            <div class="current-equipment">
+                <h2>ACTUAL EQUIPEMENT</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-box" data-type="bar">
+                        <h3>BAR</h3>
+                        <img id="current-bar-img" src="img/default_bar.png" alt="Barre actuelle"/>
+                        <p id="current-bar-name">Default</p>
+                        <button class="btn-change">Change</button>
+                    </div>
+
+                    <div class="equipment-box" data-type="ball">
+                        <h3>BALL</h3>
+                        <img id="current-ball-img" src="img/default_ball.png" alt="Balle actuelle"/>
+                        <p id="current-ball-name">Default</p>
+                        <button class="btn-change">Change</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="inventory-view" class="inventory-view hidden">
+                <h2 id="inventory-title">INVENTORY</h2>
+                <div class="inventory-grid" id="inventory-grid">
+                </div>
+                <button id="btn-back-inventory" class="btn-back">Back</button>
+            </div>
+        </div>
+    </div>
     
-    <script src="dist/src/ts/types.js" defer></script>
-    <script src="dist/src/ts/home.js" defer></script>
-    <script src="dist/src/ts/shop.js" defer></script>
+    <script src="dist/src/ts/home.js" type="module"></script>
+    <script src="dist/src/ts/shop.js" type="module"></script>
+    <script src="dist/src/ts/inventory.js" type="module"></script>
 </body>
 </html>

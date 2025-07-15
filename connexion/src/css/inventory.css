@@ -1,0 +1,114 @@
+/* Styles de base pour l'inventaire */
+.div-inventory {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: rgba(0, 0, 0, 0.9); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.container-inventory {
+    width: 80%;
+    height: 80%;
+  	background-color: rgb(32, 88, 6);
+    border-radius: 15px;
+    padding: 20px;
+    overflow-y: auto;
+    color: white;
+}
+
+/* Section équipement actuel */
+.current-equipment {
+    margin-bottom: 30px;
+}
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.equipment-box {
+    background-color: rgb(80, 74, 74);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.equipment-box:hover {
+    transform: scale(1.03);
+}
+
+.equipment-box img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 10px 0;
+}
+
+/* Section inventaire */
+.inventory-view {
+    margin-top: 30px;
+}
+
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.inventory-item {
+    background-color: #444;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.inventory-item.equipped {
+    border: 2px solid gold;
+    background-color: #555;
+}
+
+.inventory-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Boutons */
+.btn-change, .btn-equip, .btn-back {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-change:hover, .btn-equip:hover, .btn-back:hover {
+    background-color: #45a049;
+}
+
+.btn-back {
+    background-color: #f44336;
+}
+
+.btn-back:hover {
+    background-color: #d32f2f;
+}
+
+.hidden {
+    display: none;
+}
