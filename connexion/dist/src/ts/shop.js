@@ -1,11 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const btn_buy_fire_bar = document.getElementById('btn-buy-fire-bar');
     const btn_buy_ice_bar = document.getElementById('btn-buy-ice-bar');
-    // const btn_logout_navbar = document.getElementById('btn-logout-navbar') as HTMLButtonElement
-    // const btn_logout_navbar = document.getElementById('btn-logout-navbar') as HTMLButtonElement
-    // const btn_logout_navbar = document.getElementById('btn-logout-navbar') as HTMLButtonElement
-    // const btn_logout_navbar = document.getElementById('btn-logout-navbar') as HTMLButtonElement
-    // const btn_logout_navbar = document.getElementById('btn-logout-navbar') as HTMLButtonElement
+    const btn_buy_work = document.getElementById('btn-buy-work');
     const user = getCurrentUser();
     if (user && user.wallet === undefined) {
         user.wallet = 0;
@@ -24,31 +20,70 @@ document.addEventListener('DOMContentLoaded', () => {
             walletDisplay.textContent = ((_a = user.wallet) === null || _a === void 0 ? void 0 : _a.toString()) || '0';
         }
     }
-    document.addEventListener('DOMContentLoaded', updateWalletDisplay);
-    function addToWallet(button, amount) {
+    function addToWallet(button, amount, item) {
         const user = getCurrentUser();
         if (!user)
             return;
         user.wallet = user.wallet || 0;
-        if (amount < 0 && user.wallet < Math.abs(amount)) {
-            triggerShake(button);
-            return;
+        // Si c'est un achat (montant négatif)
+        if (amount < 0) {
+            // Vérifier si l'utilisateur a déjà l'item
+            if (item && user.cosmetics.some(c => c.id === item.id)) {
+                alert('You already own this item!');
+                return;
+            }
+            if (user.wallet < Math.abs(amount)) {
+                triggerShake(button);
+                return;
+            }
+            // Ajouter l'item à l'inventaire si c'est un achat
+            if (item) {
+                if (!user.cosmetics)
+                    user.cosmetics = [];
+                user.cosmetics.push(Object.assign(Object.assign({}, item), { equipped: false }));
+            }
         }
         user.wallet += amount;
         localStorage.setItem('currentUser', JSON.stringify(user));
         updateWalletDisplay();
+        // Mettre à jour la liste des users
         const users = JSON.parse(localStorage.getItem('users') || '[]');
         const userIndex = users.findIndex(u => u.login === user.login);
         if (userIndex !== -1) {
             users[userIndex] = user;
             localStorage.setItem('users', JSON.stringify(users));
         }
+        if (amount < 0 && item) {
+            alert(`You bought ${item.name}!`);
+        }
     }
+    // Définir les items du shop
+    const shopItems = [
+        {
+            id: 'fire-bar',
+            name: 'fire-bar',
+            type: 'bar',
+            imagePath: 'img/fire_bar.png',
+            equipped: false,
+            price: 50
+        },
+        {
+            id: 'ice-bar',
+            name: 'ice-bar',
+            type: 'bar',
+            imagePath: 'img/ice_bar.png',
+            equipped: false,
+            price: 50
+        }
+    ];
     btn_buy_fire_bar === null || btn_buy_fire_bar === void 0 ? void 0 : btn_buy_fire_bar.addEventListener('click', () => {
-        addToWallet(btn_buy_fire_bar, -50);
+        addToWallet(btn_buy_fire_bar, -50, shopItems[0]);
     });
     btn_buy_ice_bar === null || btn_buy_ice_bar === void 0 ? void 0 : btn_buy_ice_bar.addEventListener('click', () => {
-        addToWallet(btn_buy_ice_bar, 25);
+        addToWallet(btn_buy_ice_bar, -50, shopItems[1]);
+    });
+    btn_buy_work === null || btn_buy_work === void 0 ? void 0 : btn_buy_work.addEventListener('click', () => {
+        addToWallet(btn_buy_work, 50, shopItems[2]);
     });
     function triggerShake(button) {
         button.classList.remove("button-error");
