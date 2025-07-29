@@ -45,8 +45,16 @@ document.addEventListener("keyup", function (e) { keys[e.key] = false; });
 function resetBall() {
     ball.x = canvas.width / 2;
     ball.y = canvas.height / 2;
-    ball.speedX = isRunning ? 4 : 0;
-    ball.speedY = isRunning ? 4 : 0;
+    var speed = canvas.width / 200;
+    var maxAngle = Math.PI / 4;
+    // const angle = (Math.random() * 2 - 1) * maxAngle;
+    var angle = 0;
+    do {
+        angle = (Math.random() * 2 - 1) * maxAngle;
+    } while (Math.abs(angle) < 0.1); // angle > ~6°
+    var direction = Math.random() < 0.5 ? -1 : 1;
+    ball.speedX = Math.cos(angle) * speed * direction;
+    ball.speedY = Math.sin(angle) * speed;
 }
 function update() {
     if (score1 >= 5 || score2 >= 5) {
@@ -88,8 +96,9 @@ function update() {
         ball.y = canvas.height / 2;
         ball.speedX *= -1;
     }
-    ball.speedX *= 1.0001;
-    ball.speedY *= 1.0001;
+    var accelerationFactor = 1 + (canvas.width / 2000000);
+    ball.speedX *= accelerationFactor;
+    ball.speedY *= accelerationFactor;
 }
 function draw() {
     if (gameOver) {
